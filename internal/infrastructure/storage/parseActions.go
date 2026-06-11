@@ -25,6 +25,8 @@ var parseAction = map[string]parseCommand{
 			return actions.ActionNil{}, err
 		}
 
+		dirType.Dir = Expand(dirType.Dir)
+
 		return dirType, nil
 	},
 

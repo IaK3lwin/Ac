@@ -18,3 +18,7 @@ func (ad ActDir) GetDescription() string {
 func (ad ActDir) GetType() string {
 	return ad.Type
 }
+
+func (ad ActDir) GetDir() string {
+	return ad.Dir
+}

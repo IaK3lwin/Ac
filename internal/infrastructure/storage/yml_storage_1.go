@@ -33,7 +33,6 @@ func (ys YmlStorage) GetActions(workspaceName string) (map[string]actions.Action
 	}
 
 	for _, file := range entry {
-		fmt.Println(file)
 
 		data, err := os.ReadFile(pathWs + "/" + file.Name())
 
@@ -49,8 +48,6 @@ func (ys YmlStorage) GetActions(workspaceName string) (map[string]actions.Action
 				file.Name(), "infra/storage/yml/getAction")
 			return actionsactionsList, errorFormat
 		}
-
-		fmt.Println("type action is : ", typeAction)
 
 		actionCurrent, err := parseAction[typeAction.Type](data)
 

@@ -1,7 +1,6 @@
 package workspace
 
 import (
-	"fmt"
 	"slices"
 
 	"github.com/IaK3lwin/ac/internal/domain/actions"
@@ -17,8 +16,6 @@ func (ws Workspace) GetAction(alias string) (actions.Actions, error) {
 
 		aliasExisted = append(aliasExisted, aliasAction)
 	}
-
-	fmt.Println("array slias: ", aliasExisted)
 
 	if slices.Contains(aliasExisted, alias) {
 		return ws.actions[alias], nil

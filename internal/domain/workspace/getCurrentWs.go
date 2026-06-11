@@ -15,8 +15,6 @@ func GetNameWsCurrent() (string, error) {
 
 	filePath := fmt.Sprintf("%v/%v", pathToFolderCurrentWs, config.Config().GetFileNameCurrentWs())
 
-	fmt.Printf("directory exist? -> %v\n", directoryCurrentWsExist())
-
 	if !directoryCurrentWsExist() {
 
 		err := os.MkdirAll(pathToFolderCurrentWs, 0o777)
@@ -31,7 +29,6 @@ func GetNameWsCurrent() (string, error) {
 			return "", err
 		}
 
-		fmt.Println("file created! with path: ", filePath)
 	}
 
 	file, err := os.Open(filePath)
@@ -52,7 +49,6 @@ func GetNameWsCurrent() (string, error) {
 }
 
 func directoryCurrentWsExist() bool {
-	fmt.Println("directory current: ", pathToFolderCurrentWs)
 
 	info, err := os.Stat(pathToFolderCurrentWs)
 

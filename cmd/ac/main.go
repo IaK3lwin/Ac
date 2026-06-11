@@ -5,7 +5,9 @@ import (
 	"os"
 
 	"github.com/IaK3lwin/ac/internal/domain/commands"
+	configsh "github.com/IaK3lwin/ac/internal/domain/config_sh"
 	"github.com/IaK3lwin/ac/internal/domain/workspace"
+	"github.com/IaK3lwin/ac/internal/infrastructure/executor"
 	"github.com/IaK3lwin/ac/internal/infrastructure/storage"
 )
 
@@ -13,6 +15,19 @@ func main() {
 	args := os.Args[1:]
 
 	if args == nil {
+		return
+	}
+
+	if args[0] == "config" {
+		fmt.Print(commands.Config("zsh"))
+		return
+	}
+
+	if args[0] == "config-sh" {
+		err := configsh.Install()
+		if err != nil {
+			fmt.Println("Erro ao configurar o sh", err.Error())
+		}
 		return
 	}
 
@@ -48,6 +63,11 @@ func main() {
 		fmt.Printf("error: %s", err.Error())
 	}
 
-	fmt.Println("action find: ", action)
 	// executar o action
+
+	err = executor.Execute(action)
+
+	if err != nil {
+		fmt.Println("[Error executing action]\n ", err.Error())
+	}
 }

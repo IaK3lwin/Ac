@@ -1,6 +1,6 @@
 # Automation context
 
-É um projeto feito para facilitar meu dia-a-dia no terminal
+É um projeto feito para facilitar meu cotidiano no terminal
 e nos projetos que crio ao longo do dia. Criando atalhos e facilitadores
 na navegação e comandos do terminal.
 

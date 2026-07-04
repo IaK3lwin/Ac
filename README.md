@@ -4,11 +4,11 @@
 e nos projetos que crio ao longo do dia. Criando atalhos e facilitadores
 na navegação e comandos do terminal.
 
-## Workspaces
+## Context
 
 Os Workspaces são como um conjunto de atalhos, automações e scripts
 que existem em um determinado contexto. Digamos que você tenha um
 projeto em que está trabalhando em que tenha que abrir um editor,
-ir para a pasta do projeto, iniciar algum processo etc... com o ac basta
-digitar `ac <nome-da-ação-definida-por-você>` e todas os paços seriam feio automaticamente.
+ir para a pasta do projeto, iniciar algum processo etc... com o ac bastaria
+digitar `ac <nome-da-ação-definida-por-você>` e todas os paços seriam feitos automaticamente.
 
